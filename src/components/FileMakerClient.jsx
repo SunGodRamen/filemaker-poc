@@ -1,3 +1,4 @@
+// FileMakerClient.jsx
 import React, { useState } from 'react';
 import TableList from './TableList/TableList';
 import TableSearch from './TableSearch/TableSearch';
@@ -12,7 +13,7 @@ function FileMakerClient() {
   return (
     <div className="filemaker-container">
       {/* Table List Section */}
-      <TableList />
+      <TableList setTableName={setTableName} />
 
       {/* Table Search Section */}
       <TableSearch

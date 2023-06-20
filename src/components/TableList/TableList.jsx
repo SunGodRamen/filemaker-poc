@@ -1,8 +1,9 @@
+// TableList.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './TableList.css';
 
-function TableList() {
+function TableList({ setTableName }) {
   const [tables, setTables] = useState([]);
   
   useEffect(() => {
@@ -26,12 +27,16 @@ function TableList() {
     fetchTables();
   }, []);
   
+  const handleTableClick = (tableName) => {
+    setTableName(tableName);
+  };
+  
   return (
     <div className="table-list">
       <h3>Tables:</h3>
       <ul>
         {tables.map((table, index) => (
-          <li key={index}>{table}</li>
+          <li key={index} onClick={() => handleTableClick(table)}>{table}</li>
         ))}
       </ul>
     </div>
