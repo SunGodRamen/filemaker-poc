@@ -1,5 +1,5 @@
-// FileMakerClient.jsx
 import React, { useState } from 'react';
+import TableList from './TableList/TableList';
 import TableSearch from './TableSearch/TableSearch';
 import RecordQuery from './RecordQuery/RecordQuery';
 import ListSection from './ListSection/ListSection';
@@ -11,6 +11,9 @@ function FileMakerClient() {
 
   return (
     <div className="filemaker-container">
+      {/* Table List Section */}
+      <TableList />
+
       {/* Table Search Section */}
       <TableSearch
         tableName={tableName}
