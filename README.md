@@ -21,7 +21,7 @@ A simple React web application to manage records in a FileMaker database. The ap
 1. Clone the repository:
 
 ```shell
-git clone https://github.com/YOUR_GITHUB_USERNAME/FileMakerDatabaseManager.git
+git clone https://github.com/SunGodRamen/FileMakerDatabaseManager.git
 ```
 
 2. Navigate to the project directory:
