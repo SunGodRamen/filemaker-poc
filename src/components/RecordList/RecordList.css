@@ -1,0 +1,19 @@
+/* RecordList.css */
+.list-section {
+  margin: 10px;
+  min-height: calc(100vh - 20px);
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.list-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list-section li {
+  cursor: pointer;
+  color: #337ab7;
+  margin: 5px 0;
+}

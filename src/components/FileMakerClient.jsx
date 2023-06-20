@@ -3,17 +3,20 @@ import React, { useState } from 'react';
 import TableList from './TableList/TableList';
 import TableSearch from './TableSearch/TableSearch';
 import RecordQuery from './RecordQuery/RecordQuery';
-import ListSection from './ListSection/ListSection';
+import RecordList from './RecordList/RecordList';
 import './FileMakerClient.css';
 
 function FileMakerClient() {
   const [data, setData] = useState(null);
   const [tableName, setTableName] = useState('');
+  const [recordId, setRecordId] = useState('');
 
   return (
     <div className="filemaker-container">
       {/* Table List Section */}
-      <TableList setTableName={setTableName} />
+      <TableList 
+        setTableName={setTableName}
+      />
 
       {/* Table Search Section */}
       <TableSearch
@@ -26,10 +29,14 @@ function FileMakerClient() {
       <RecordQuery
         tableName={tableName}
         setData={setData}
+        recordId={recordId}
       />
 
-      {/* List Section */}
-      <ListSection data={data} />
+      {/* Record List Section */}
+      <RecordList 
+        data={data} 
+        setRecordId={setRecordId}
+      />
     </div>
   );
 }
