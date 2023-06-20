@@ -1,5 +1,7 @@
+// FileMakerClient.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+import './FileMakerClient.css';
 
 function FileMakerClient() {
   const [data, setData] = useState(null);
@@ -62,32 +64,43 @@ function FileMakerClient() {
   };
 
   return (
-    <div>
+    <div className="filemaker-container">
       <input
+        className="filemaker-input"
         type="text"
         placeholder="Record ID"
         value={recordId}
         onChange={(e) => setRecordId(e.target.value)}
       />
       <input
+        className="filemaker-input"
         type="text"
         placeholder="Field Name 1"
         value={fieldData.fieldName1}
         onChange={(e) => setFieldData({ ...fieldData, fieldName1: e.target.value })}
       />
       <input
+        className="filemaker-input"
         type="text"
         placeholder="Field Name 2"
         value={fieldData.fieldName2}
         onChange={(e) => setFieldData({ ...fieldData, fieldName2: e.target.value })}
       />
 
-      <button onClick={fetchRecord}>Read Record</button>
-      <button onClick={createRecord}>Create Record</button>
-      <button onClick={updateRecord}>Update Record</button>
-      <button onClick={deleteRecord}>Delete Record</button>
+      <button className="filemaker-button" onClick={fetchRecord}>
+        Read Record
+      </button>
+      <button className="filemaker-button" onClick={createRecord}>
+        Create Record
+      </button>
+      <button className="filemaker-button" onClick={updateRecord}>
+        Update Record
+      </button>
+      <button className="filemaker-button" onClick={deleteRecord}>
+        Delete Record
+      </button>
 
-      <pre>{data && JSON.stringify(data, null, 2)}</pre>
+      <pre className="data-display">{data && JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 }
