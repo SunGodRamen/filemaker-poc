@@ -11,29 +11,27 @@
 .record-id-input {
   flex-basis: 100%;
 }
+.inputs-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.record-id-input {
+  flex: 1; /* Takes up available space */
+  margin: 5px;
+}
 
 .field-inputs {
   display: flex;
-  flex: 1;
+  flex: 2; /* Takes up twice the space as record-id-input */
 }
 
-.filemaker-input {
-  margin: 5px;
+.field-inputs .filemaker-input {
+  flex: 1; /* Divide space equally between Field Name and Field Value inputs */
 }
 
-.buttons-container {
-  margin: 5px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.filemaker-button {
-  margin: 5px;
-}
-
-@media screen and (min-width: 480px) {
-  .record-id-input {
-    flex-basis: auto;
-    flex: 1;
+@media screen and (max-width: 480px) {
+  .record-id-input, .field-inputs {
+    flex: 100%; /* Stack inputs on top of each other for smaller screens */
   }
 }

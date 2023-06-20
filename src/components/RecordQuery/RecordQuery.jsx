@@ -40,7 +40,7 @@ function RecordQuery({ tableName, setData }) {
 
   return (
     <div className="record-query-section">
-      <div className="inputs-container">
+      <div className="inputs-row">
         <input
           className="filemaker-input record-id-input"
           type="text"
